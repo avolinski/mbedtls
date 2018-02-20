@@ -1,5 +1,28 @@
 mbed TLS ChangeLog (Sorted per branch, date)
 
+= mbed TLS 2.7.x branch released 2018-xx-xx
+
+Features
+   * Extend PKCS#8 interface by introducing support for the entire SHA
+     algorithms family when encrypting private keys using PKCS#5 v2.0.
+     This allows reading encrypted PEM files produced by software that
+     uses PBKDF2-SHA2, such as OpenSSL 1.1. Submitted by Antonio Quartulli,
+     OpenVPN Inc. Fixes #1339
+   * Add support for public keys encoded in PKCS#1 format. #1122
+
+Bugfix
+   * Fix the name of a DHE parameter that was accidentally changed in 2.7.0.
+     Fixes #1358.
+   * Fix test_suite_pk to work on 64-bit ILP32 systems. #849
+   * Add dependency for MBEDTLS_VERSION_FEATURES_C in check_version_feature test,
+     to skip unneeded tests. Raised by trinitytonic in #1299
+
+Changes
+   * Fix tag lengths and value ranges in the documentation of CCM encryption.
+     Contributed by Mathieu Briand.
+   * Fix typo in a comment ctr_drbg.c. Contributed by Paul Sokolovsky.
+   * Remove support for the library reference configuration for picocoin.
+
 = mbed TLS 2.7.0 branch released 2018-02-03
 
 Security
